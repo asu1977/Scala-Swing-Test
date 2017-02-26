@@ -1,6 +1,7 @@
 import scala.swing._
 
 val textArea = new TextArea
+val scrollV = new ScrollPane(textArea)
 
 def openFile: Unit ={
   val chooser = new FileChooser
@@ -22,7 +23,7 @@ def saveFile: Unit = {
 
 val frame = new MainFrame {
   title = "My First GUI"
-  contents = textArea
+  contents = scrollV
   menuBar = new MenuBar {
     contents += new Menu("File"){
       contents += new MenuItem(Action("Open"){
